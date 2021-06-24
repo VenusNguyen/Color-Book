@@ -1,5 +1,5 @@
 let winnie;
-let brushSize = 20;
+let brushSize = 0;
 let brushColor = 0;
 let playButton;
 let song;
@@ -12,20 +12,26 @@ function preload() {
 
   winnie = loadImage("./assets/Winnie-the-Pooh.png");
   playButton = loadImage("assets/play-button.png")
-  song = loadSound("./assets/Le Festin-Camille.mp3");
+  song = loadSound("./assets/Le-Festin-Camille");
   
 
 }
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  background(255);
+  frameRate(32);
+ 
+
+  textSize(24);
+  text()
 
   textSize(20);
   text('Brush Size: ', 850, 137);
 
   image(winnie, 0, 0);
-  image(playButton, )
+  playButton.resize(50, 50);
+  image(playButton, 1300, 800);
+  
 }
 
 function draw() {
@@ -63,19 +69,27 @@ function draw() {
 
   
   ellipse(mouseX, mouseY, brushSize);
-
+  
+  
   
 
 }
 
 function mousePressed() {
-
+  
 }
 
 function mouseClicked() {
   if (mouseX > 1260 && mouseX < 1640 && mouseY > 10 && mouseY < 165) {
     brushColor = get(mouseX, mouseY);
+    song.play();
+    song.setVolume(10);
   }
+
+  // if (mouseX > playButton.x && mouseY < playButton.x + playButton.width && mouseY > playButton.y && mouseY < playButton.y + playButton.height) {
+  //   console.log('Here');
+    
+  // }
     
 }
 
