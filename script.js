@@ -1,16 +1,18 @@
+let myImages = ['Winnie-the-Pooh.png', 'tinker-bell.png', 'simba.png', 'dumbo.png', 'Max-andRuby.png', 'disney-princesses.png']
 let winnie;
 let brushSize = 0;
 let brushColor = 0;
 let playButton;
 let song;
 let slider;
+let imageUse;
 
 function preload() {
   slider = createSlider(5, 100, 20, 1);
   slider.position(975, 130);
   slider.style('width', '250px');
 
-  winnie = loadImage("./assets/Winnie-the-Pooh.png");
+  imageUse = loadImage("./assets/" + random(myImages));
   playButton = loadImage("assets/play-button.png")
   song = loadSound("./assets/Le-Festin-Camille");
   
@@ -23,12 +25,16 @@ function setup() {
  
 
   textSize(24);
-  text()
+  fill('red');
+  text('Hit Space in your key board to save image.', 825, 1000);
 
   textSize(20);
+  fill(0);
   text('Brush Size: ', 850, 137);
 
-  image(winnie, 0, 0);
+  imageUse.resize(800, 1050);
+  image(imageUse, 0, 0);
+
   playButton.resize(50, 50);
   image(playButton, 1300, 800);
   
@@ -60,7 +66,7 @@ function draw() {
   noStroke();
   fill(brushColor);
   if (mouseIsPressed) {
-    if (mouseX > 0 && mouseX < winnie.width && mouseY > 0 && mouseY < winnie.height) {
+    if (mouseX > 0 && mouseX < imageUse.width && mouseY > 0 && mouseY < imageUse.height) {
       brushSize = slider.value();
     }
   } else {
@@ -82,19 +88,19 @@ function mousePressed() {
 function mouseClicked() {
   if (mouseX > 1260 && mouseX < 1640 && mouseY > 10 && mouseY < 165) {
     brushColor = get(mouseX, mouseY);
+  }
+
+  //currently not working :((
+  if (mouseX > playButton.x && mouseY < (playButton.x + playButton.width) && mouseY > playButton.y && mouseY < (playButton.y + playButton.height)) {
+    console.log('Here');
     song.play();
     song.setVolume(10);
   }
-
-  // if (mouseX > playButton.x && mouseY < playButton.x + playButton.width && mouseY > playButton.y && mouseY < playButton.y + playButton.height) {
-  //   console.log('Here');
-    
-  // }
     
 }
 
 function keyPressed() {
   if (key == " ") {
-    save(winnie, "myImage.png");
+    save(imageUse, "myImage.png");
   }
 }
