@@ -1,4 +1,4 @@
-# p5-template
+# Color Book
 
 Use this template for a brand new p5.js project. 
 
