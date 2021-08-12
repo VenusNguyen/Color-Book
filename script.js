@@ -1,9 +1,6 @@
-let myImages = ['Winnie-the-Pooh.png', 'tinker-bell.png', 'simba.png', 'dumbo.png', 'Max-andRuby.png', 'disney-princesses.png']
-let winnie;
+let myImages = ['Winnie-the-Pooh.png', 'tinker-bell.png', 'simba.png', 'dumbo.png', 'Max-and-Ruby.png', 'disney-princesses.png']
 let brushSize = 0;
 let brushColor = 0;
-let playButton;
-let song;
 let slider;
 let imageUse;
 
@@ -23,7 +20,6 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   frameRate(32);
  
-
   textSize(24);
   fill('red');
   text('Hit Space in your key board to save image.', 825, 1000);
@@ -34,9 +30,6 @@ function setup() {
 
   imageUse.resize(800, 1050);
   image(imageUse, 0, 0);
-
-  playButton.resize(50, 50);
-  image(playButton, 1300, 800);
   
 }
 
@@ -76,9 +69,6 @@ function draw() {
   
   ellipse(mouseX, mouseY, brushSize);
   
-  
-  
-
 }
 
 function mousePressed() {
@@ -88,13 +78,6 @@ function mousePressed() {
 function mouseClicked() {
   if (mouseX > 1260 && mouseX < 1640 && mouseY > 10 && mouseY < 165) {
     brushColor = get(mouseX, mouseY);
-  }
-
-  //currently not working :((
-  if (mouseX > playButton.x && mouseY < (playButton.x + playButton.width) && mouseY > playButton.y && mouseY < (playButton.y + playButton.height)) {
-    console.log('Here');
-    song.play();
-    song.setVolume(10);
   }
     
 }
