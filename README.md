@@ -1,37 +1,29 @@
-# p5-template
+# Color Book
 
-Use this template for a brand new p5.js project. 
+## Description
 
+>A color book that will bring back your childhood and help grow your creativity.
 
-# Assignment 1: Make a brush
+![GIF](assets/demo.gif)
 
-1.  Find an object, texture, or motion that you want to recreate using p5.js Here is [some inspiration](https://lmccart.github.io/p5-workshop/). 
-2.  Generate some sort of "mark" every time your mouse location changes (aka make a “brush” you can "draw" with using the mouse). 
-3.  Include one element that changes as you move the mouse that is *not* just the location of the mark. This could be scale, color, angle, or more. 
-4.  (Optional) Include one element that is different each time you load the sketch (you may want to use randomness!)
+## Link and Instruction
 
+> **Instruction**
+>* Choose the color you want by clicking on it
+>* Use the slide to adjust the brush size
+>* Hit space to save the image to your device
+>* Try hit refresh to see the magic
 
-## Some helpful questions to think through
+>**Link**: https://venusnguyen.github.io/Color-Book/
 
-#### Q: What ideas do I want to convey with my brush? 
+## How to run
 
-You may want to choose an emotion: surprise, playfulness, confusion, etc. 
+>1. Clone this repo to your personal device
+>2. Open it in Visual Studio Code
+>3. Install this extention: [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+>4. Click *Go Live* at the bottom right of your VSCode window or you can right click on the index.html and choose *Open with Live Server*
 
-#### Q: How can I create layers in p5?
+## Tools Used
 
-Layers can help create a sense of complexity! To do so, comment out the `background()` function in your `draw()` function. This will prevent the screen from being covered by the background color each frame. 
-
-#### Q: How can I create a gradient of colors? 
-
-You might to check out https://p5js.org/reference/#/p5/lerpColor. Also useful: https://p5js.org/reference/#/p5/map
-
-#### Q: Is my brush a tool for the user to create art, or is the brush a work of art in itself? 
- 
-🤯
-
-#### Q: Are there any resources I can turn to? 
-
-Check out Dan Schiffman's youtube tutorials [http://learningprocessing.com/videos/3-2# ](here)!
-
-
-This is adapted from [Camille Utterback's class "Drawing with Code"](http://camilleutterback.com/).
+* [p5.js](https://p5js.org/)
+* [Template](https://github.com/Snap-Engineering-Academy-2021/p5-template)
